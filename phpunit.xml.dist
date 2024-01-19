@@ -4,11 +4,7 @@
          bootstrap="vendor/autoload.php"
          cacheResult="false"
          executionOrder="depends,defects"
-         convertNoticesToExceptions="false"
-         convertWarningsToExceptions="false"
          beStrictAboutOutputDuringTests="true"
-         beStrictAboutTodoAnnotatedTests="true"
-         verbose="true"
          colors="true"
          failOnRisky="true"
          failOnWarning="true">
@@ -24,9 +20,9 @@
         </testsuite>
     </testsuites>
 
-    <coverage processUncoveredFiles="true">
+    <source>
         <include>
             <directory suffix=".php">src</directory>
         </include>
-    </coverage>
+    </source>
 </phpunit>

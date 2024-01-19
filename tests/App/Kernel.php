@@ -2,6 +2,8 @@
 
 namespace Sofyco\Bundle\CorsResponseBundle\Tests\App;
 
+use Sofyco\Bundle\CorsResponseBundle\CorsResponseBundle;
+use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -14,8 +16,8 @@ final class Kernel extends \Symfony\Component\HttpKernel\Kernel
 
     public function registerBundles(): iterable
     {
-        yield new \Symfony\Bundle\FrameworkBundle\FrameworkBundle();
-        yield new \Sofyco\Bundle\CorsResponseBundle\CorsResponseBundle();
+        yield new FrameworkBundle();
+        yield new CorsResponseBundle();
     }
 
     protected function configureContainer(ContainerConfigurator $container): void

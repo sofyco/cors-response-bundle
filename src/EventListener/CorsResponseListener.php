@@ -8,9 +8,9 @@ use Symfony\Component\HttpKernel\Event\ResponseEvent;
 
 final readonly class CorsResponseListener
 {
-    public const HEADER_ALLOW_ORIGIN = 'access-control-allow-origin';
-    public const HEADER_ALLOW_HEADERS = 'access-control-allow-headers';
-    public const HEADER_ALLOW_METHODS = 'access-control-allow-methods';
+    public const string HEADER_ALLOW_ORIGIN = 'access-control-allow-origin';
+    public const string HEADER_ALLOW_HEADERS = 'access-control-allow-headers';
+    public const string HEADER_ALLOW_METHODS = 'access-control-allow-methods';
 
     public function __construct(private string $origin, private string $headers, private string $methods)
     {
