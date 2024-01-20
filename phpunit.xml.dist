@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
          bootstrap="vendor/autoload.php"
          cacheResult="false"
          executionOrder="depends,defects"
@@ -9,7 +9,6 @@
          failOnRisky="true"
          failOnWarning="true">
     <php>
-        <server name="APP_ENV" value="test"/>
         <server name="APP_DEBUG" value="false"/>
         <server name="KERNEL_CLASS" value="Sofyco\Bundle\CorsResponseBundle\Tests\App\Kernel"/>
     </php>
