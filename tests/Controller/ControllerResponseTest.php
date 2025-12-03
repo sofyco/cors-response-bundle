@@ -9,6 +9,13 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class ControllerResponseTest extends WebTestCase
 {
+    protected function tearDown(): void
+    {
+        parent::tearDown();
+
+        restore_exception_handler();
+    }
+
     public function testResponseWithHeaders(): void
     {
         $response = $this->sendRequest();
@@ -43,13 +50,6 @@ final class ControllerResponseTest extends WebTestCase
         self::assertArrayNotHasKey(CorsResponseListener::HEADER_ALLOW_ORIGIN, $headers);
         self::assertArrayNotHasKey(CorsResponseListener::HEADER_ALLOW_HEADERS, $headers);
         self::assertArrayNotHasKey(CorsResponseListener::HEADER_ALLOW_METHODS, $headers);
-    }
-
-    protected function tearDown(): void
-    {
-        self::ensureKernelShutdown();
-
-        restore_exception_handler();
     }
 
     private function sendRequest(string $method = Request::METHOD_GET, string $environment = 'test'): Response
