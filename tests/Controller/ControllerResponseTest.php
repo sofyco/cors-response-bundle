@@ -45,6 +45,13 @@ final class ControllerResponseTest extends WebTestCase
         self::assertArrayNotHasKey(CorsResponseListener::HEADER_ALLOW_METHODS, $headers);
     }
 
+    protected function tearDown(): void
+    {
+        self::ensureKernelShutdown();
+
+        restore_exception_handler();
+    }
+
     private function sendRequest(string $method = Request::METHOD_GET, string $environment = 'test'): Response
     {
         $client = self::createClient(['environment' => $environment]);

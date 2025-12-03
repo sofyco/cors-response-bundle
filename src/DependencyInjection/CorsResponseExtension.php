@@ -14,7 +14,11 @@ final class CorsResponseExtension extends ConfigurableExtension
     {
         $environment = $container->getParameter('kernel.environment');
 
-        if (false === \in_array($environment, $mergedConfig['environments'], true)) {
+        if (false === is_array($mergedConfig['environments'])) {
+            return;
+        }
+
+        if (false === in_array($environment, $mergedConfig['environments'], true)) {
             return;
         }
 
